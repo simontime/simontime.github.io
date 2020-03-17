@@ -250,12 +250,12 @@
 				var kartch = (stats & 0x1ff);
 
 				type(
-					((time / 60000) | 0).toString() + ":" +
-					(((time / 1000) % 60) | 0).toString() + ":" +
-					((time % 1000) | 0).toString() + "\n" +
+					((time / 60000) >>> 0).toString() + ":" +
+					(((time / 1000) % 60) >>> 0).toString() + ":" +
+					((time % 1000) >>> 0).toString() + "\n" +
 					courseNames[course] + "\n" +
-					characterNames[(kartch / 37) | 0] + " / " +
-					kartNames[(kartch % 37) | 0] + "\n" +
+					characterNames[(kartch / 37) >>> 0] + " / " +
+					kartNames[(kartch % 37) >>> 0] + "\n" +
 					"Player: " +
 					String.fromCodePoint((decodedCode[5] & 0xff) << 8 | (decodedCode[4] & 0xff)) +
 					String.fromCodePoint((decodedCode[7] & 0xff) << 8 | (decodedCode[6] & 0xff)));
